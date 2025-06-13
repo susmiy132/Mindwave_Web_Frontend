@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const RegisterForm = () => {
   // const navigate = useNavigate();
 
-  // const [formData, setFormData] = useState({
-  //   fullName: "",
-  //   email: "",
-  //   password: "",
-  //   confirmPassword: "",
-  // });
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
