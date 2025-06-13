@@ -6,27 +6,27 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await fetch("http://localhost:5050/api/auth/login", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({ email, password }),
-  //     });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:5050/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-  //     const data = await res.json();
-  //     if (res.ok) {
-  //       alert("Login successful");
-  //       localStorage.setItem("token", data.token);
-  //       // Redirect logic can go here
-  //     } else {
-  //       alert(`${data.message}`);
-  //     }
-  //   } catch (err) {
-  //     console.error("Login error:", err.message);
-  //   }
-  // };
+      const data = await res.json();
+      if (res.ok) {
+        alert("Login successful");
+        localStorage.setItem("token", data.token);
+        // Redirect logic can go here
+      } else {
+        alert(`${data.message}`);
+      }
+    } catch (err) {
+      console.error("Login error:", err.message);
+    }
+  };
 
   return (
     <div className="w-full flex items-center fixed top-0 left-0 justify-center min-h-screen bg-gray-100">
