@@ -1,65 +1,65 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { toast } from "react-toastify";
+// import { useNavigate, Link } from "react-router-dom";
+// import { toast } from "react-toastify";
 
 const RegisterForm = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   fullName: "",
+  //   email: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }));
+  // };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    const { fullName, email, password, confirmPassword } = formData;
+  //   const { fullName, email, password, confirmPassword } = formData;
 
-    if (!fullName || !email || !password || !confirmPassword) {
-      toast.error("Please fill in all fields");
-      return;
-    }
+  //   if (!fullName || !email || !password || !confirmPassword) {
+  //     toast.error("Please fill in all fields");
+  //     return;
+  //   }
 
-    if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
-      return;
-    }
+  //   if (password !== confirmPassword) {
+  //     toast.error("Passwords do not match");
+  //     return;
+  //   }
 
-    try {
-      const res = await fetch("http://localhost:5050/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ fullName, email, password }),
-      });
+  //   try {
+  //     const res = await fetch("http://localhost:5050/api/auth/register", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ fullName, email, password }),
+  //     });
 
-      const data = await res.json();
+  //     const data = await res.json();
 
-      if (res.ok) {
-        toast.success("Registered successfully!",{
-          onClose: () => navigate("login"),   //Navigate after toast closes
-          autoClose: 2000,     //Toast duration (2 seconds)
-        });
-      } else {
-        toast.error(data.message || "Registration failed");
-      }
+  //     if (res.ok) {
+  //       toast.success("Registered successfully!",{
+  //         onClose: () => navigate("login"),   //Navigate after toast closes
+  //         autoClose: 2000,     //Toast duration (2 seconds)
+  //       });
+  //     } else {
+  //       toast.error(data.message || "Registration failed");
+  //     }
 
-    } catch (error) {
-      console.error("Register error:", error);
-      toast.error("Something went wrong. Try again.");
-    }
-  };
+  //   } catch (error) {
+  //     console.error("Register error:", error);
+  //     toast.error("Something went wrong. Try again.");
+  //   }
+  // };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
