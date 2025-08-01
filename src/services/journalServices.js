@@ -37,29 +37,29 @@ export const createJournal = async (form, token) => {
 //   return data;
 // };
 
-// export const fetchAllJournals = async (token) => {
-//   try {
-//     const response = await fetch("http://localhost:5050/api/journals", {
-//       method: "GET",
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     });
+export const fetchAllJournals = async (token) => {
+  try {
+    const response = await fetch("http://localhost:5050/api/journals", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-//     const data = await response.json();
+    const data = await response.json();
 
-//     if (!response.ok) {
-//       throw new Error(data.message || "Failed to fetch journals");
-//     }
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to fetch journals");
+    }
 
-//     return data.journals; // ✅ return the actual array only
-//   } catch (err) {
-//     console.error("Error fetching journals:", err.message);
-//     throw err;
-//   }
-// };
+    return data.journals; // ✅ return the actual array only
+  } catch (err) {
+    console.error("Error fetching journals:", err.message);
+    throw err;
+  }
+};
 
-// Fetch journal by ID
+// // Fetch journal by ID
 // export const getJournalById = async (id, token) => {
 //   const res = await fetch(`http://localhost:5050/api/journals/${id}`, {
 //     headers: {
