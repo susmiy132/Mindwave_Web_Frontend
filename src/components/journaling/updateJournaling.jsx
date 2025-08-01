@@ -35,14 +35,14 @@ const UpdateJournal = () => {
     fetchJournal();
   }, [id, token]);
 
-//   const handleChange = (e) => {
-//     const { name, value, files } = e.target;
-//     if (name === "image") {
-//       setForm((prev) => ({ ...prev, image: files[0] }));
-//     } else {
-//       setForm((prev) => ({ ...prev, [name]: value }));
-//     }
-//   };
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === "image") {
+      setForm((prev) => ({ ...prev, image: files[0] }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
+  };
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
