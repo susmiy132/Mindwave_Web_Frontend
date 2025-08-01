@@ -5,13 +5,13 @@ import { fetchAllJournals, deleteJournal } from "../../services/journalServices"
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-// const SaveJournalPage = () => {
-//   const [journals, setJournals] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState("");
-//   const navigate = useNavigate();
+const SaveJournalPage = () => {
+  const [journals, setJournals] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-//   const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
   // const loadJournals = async () => {
   //   try {
