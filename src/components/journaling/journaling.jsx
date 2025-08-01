@@ -14,18 +14,18 @@ const Journaling = () => {
     image: null,
   });
 
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
-  // const navigate = useNavigate();
-  // const token = localStorage.getItem("token");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
-  // const handleChange = (e) => {
-  //   const { name, value, files } = e.target;
-  //   if (name === "image") {
-  //     setForm((f) => ({ ...f, image: files[0] }));
-  //   } else {
-  //     setForm((f) => ({ ...f, [name]: value }));
-  //   }
-  // };
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    if (name === "image") {
+      setForm((f) => ({ ...f, image: files[0] }));
+    } else {
+      setForm((f) => ({ ...f, [name]: value }));
+    }
+  };
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
