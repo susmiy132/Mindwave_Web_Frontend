@@ -89,12 +89,12 @@ const LoginForm = () => {
           </label>
         </div>
 
-        {/* <button
+        <button
           type="submit"
           className="w-full bg-purple-700 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition"
         >
           Login
-        </button> */}
+        </button>
 
         {/* <p className="text-sm text-center text-gray-600">
           Don't have an account?{" "}
