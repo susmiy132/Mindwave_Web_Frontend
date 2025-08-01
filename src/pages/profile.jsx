@@ -25,16 +25,16 @@ const Profile = () => {
     loadProfile();
   }, []);
 
-//   const handleUpdate = () => {
-//     // Navigate to update profile page or open modal, etc.
-//     navigate("/profile/update"); // adjust path accordingly
-//   };
+  const handleUpdate = () => {
+    // Navigate to update profile page or open modal, etc.
+    navigate("/profile/update"); // adjust path accordingly
+  };
 
-//   const handleLogout = () => {
-//     // Clear token and redirect to login
-//     localStorage.removeItem("token");
-//     navigate("/login"); // adjust path accordingly
-//   };
+  const handleLogout = () => {
+    // Clear token and redirect to login
+    localStorage.removeItem("token");
+    navigate("/login"); // adjust path accordingly
+  };
 
   if (error) {
     return <div>Error loading profile: {error}</div>;
