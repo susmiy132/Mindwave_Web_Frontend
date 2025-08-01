@@ -17,23 +17,23 @@ const UpdateJournal = () => {
   });
   const [loading, setLoading] = useState(false);
 
-//   // Load journal on mount
-//   useEffect(() => {
-//     const fetchJournal = async () => {
-//       try {
-//         const data = await getJournalById(id, token);
-//         setForm({
-//           title: data.title || "",
-//           content: data.content || "",
-//           mood: data.mood || "",
-//           image: null,
-//         });
-//       } catch (error) {
-//         toast.error("Failed to fetch journal");
-//       }
-//     };
-//     fetchJournal();
-//   }, [id, token]);
+  // Load journal on mount
+  useEffect(() => {
+    const fetchJournal = async () => {
+      try {
+        const data = await getJournalById(id, token);
+        setForm({
+          title: data.title || "",
+          content: data.content || "",
+          mood: data.mood || "",
+          image: null,
+        });
+      } catch (error) {
+        toast.error("Failed to fetch journal");
+      }
+    };
+    fetchJournal();
+  }, [id, token]);
 
 //   const handleChange = (e) => {
 //     const { name, value, files } = e.target;
