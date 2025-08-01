@@ -83,21 +83,21 @@ export const updateJournal = async (id, formData, token) => {
   return res.json();
 };
 
-// // for delete 
-// export const deleteJournal = async (id, token) => {
-//   const response = await fetch(`http://localhost:5050/api/journals/${id}`, {
-//     method: "DELETE",
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
+// for delete 
+export const deleteJournal = async (id, token) => {
+  const response = await fetch(`http://localhost:5050/api/journals/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-//   if (!response.ok) {
-//     throw new Error("Failed to delete journal");
-//   }
+  if (!response.ok) {
+    throw new Error("Failed to delete journal");
+  }
 
-//   return await response.json();
-// };
+  return await response.json();
+};
 
 
 
