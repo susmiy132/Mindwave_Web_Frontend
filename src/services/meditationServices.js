@@ -176,45 +176,45 @@ export const getMeditationById = async (id, token) => {
   return data.data || data;
 };
 
-// // Update meditation by ID (with optional image)
-// export const updateMeditation = async (id, form, token) => {
-//   const formData = new FormData();
-//   if (form.title) formData.append("title", form.title);
-//   if (form.description) formData.append("description", form.description);
-//   if (form.duration) formData.append("duration", form.duration);
-//   if (form.image) formData.append("image", form.image);
+// Update meditation by ID (with optional image)
+export const updateMeditation = async (id, form, token) => {
+  const formData = new FormData();
+  if (form.title) formData.append("title", form.title);
+  if (form.description) formData.append("description", form.description);
+  if (form.duration) formData.append("duration", form.duration);
+  if (form.image) formData.append("image", form.image);
 
-//   const response = await fetch(`${BASE_URL}/meditations/${id}`, {
-//     method: "PUT",
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//     body: formData,
-//   });
+  const response = await fetch(`${BASE_URL}/meditations/${id}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
 
-//   const data = await response.json();
+  const data = await response.json();
 
-//   if (!response.ok) {
-//     throw new Error(data.message || "Failed to update meditation");
-//   }
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to update meditation");
+  }
 
-//   return data;
-// };
+  return data;
+};
 
-// // Delete meditation by ID
-// export const deleteMeditation = async (id, token) => {
-//   const response = await fetch(`${BASE_URL}/meditations/${id}`, {
-//     method: "DELETE",
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
+// Delete meditation by ID
+export const deleteMeditation = async (id, token) => {
+  const response = await fetch(`${BASE_URL}/meditations/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-//   const data = await response.json();
+  const data = await response.json();
 
-//   if (!response.ok) {
-//     throw new Error(data.message || "Failed to delete meditation");
-//   }
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to delete meditation");
+  }
 
-//   return data;
-// };
+  return data;
+};
