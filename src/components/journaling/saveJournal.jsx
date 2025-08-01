@@ -13,25 +13,25 @@ const SaveJournalPage = () => {
 
   const token = localStorage.getItem("token");
 
-  // const loadJournals = async () => {
-  //   try {
-  //     const response = await fetchAllJournals(token);
-  //     if (Array.isArray(response)) {
-  //       setJournals(response);
-  //     } else {
-  //       throw new Error("Invalid data format from server");
-  //     }
-  //   } catch (err) {
-  //     console.error("Failed to fetch journals:", err);
-  //     setError("Failed to fetch journal entries.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const loadJournals = async () => {
+    try {
+      const response = await fetchAllJournals(token);
+      if (Array.isArray(response)) {
+        setJournals(response);
+      } else {
+        throw new Error("Invalid data format from server");
+      }
+    } catch (err) {
+      console.error("Failed to fetch journals:", err);
+      setError("Failed to fetch journal entries.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   loadJournals();
-  // }, [token]);
+  useEffect(() => {
+    loadJournals();
+  }, [token]);
 
   // const handleDelete = async (id) => {
   //   try {
