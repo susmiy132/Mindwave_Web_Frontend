@@ -59,16 +59,16 @@ export const fetchAllJournals = async (token) => {
   }
 };
 
-// // Fetch journal by ID
-// export const getJournalById = async (id, token) => {
-//   const res = await fetch(`http://localhost:5050/api/journals/${id}`, {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
-//   if (!res.ok) throw new Error("Failed to fetch journal");
-//   return res.json();
-// };
+// Fetch journal by ID
+export const getJournalById = async (id, token) => {
+  const res = await fetch(`http://localhost:5050/api/journals/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (!res.ok) throw new Error("Failed to fetch journal");
+  return res.json();
+};
 
 // // Update journal
 // export const updateJournal = async (id, formData, token) => {
