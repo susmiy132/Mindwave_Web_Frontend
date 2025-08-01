@@ -10,35 +10,35 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const res = await fetch("http://localhost:5050/api/auth/login", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ email, password }),
-//       });
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:5050/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-//       const data = await res.json();
-//       if (res.ok) {
-//         // Save token
-//         localStorage.setItem("token", data.token);
+      const data = await res.json();
+      if (res.ok) {
+        // Save token
+        localStorage.setItem("token", data.token);
 
-//         // Show toast success message
-//         toast.success("Login successful");
+        // Show toast success message
+        toast.success("Login successful");
 
-//         // Navigate to dashboard after a short delay so toast is visible
-//         setTimeout(() => {
-//           navigate("/dashboard");
-//         }, 1500);
-//       } else {
-//         toast.error(data.message || "Login failed");
-//       }
-//     } catch (err) {
-//       toast.error("Login error: " + err.message);
-//       console.error("Login error:", err.message);
-//     }
-//   };
+        // Navigate to dashboard after a short delay so toast is visible
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1500);
+      } else {
+        toast.error(data.message || "Login failed");
+      }
+    } catch (err) {
+      toast.error("Login error: " + err.message);
+      console.error("Login error:", err.message);
+    }
+  };
 
   return (
     <div className="w-full flex items-center fixed top-0 left-0 justify-center min-h-screen bg-gray-100">
