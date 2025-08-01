@@ -7,7 +7,7 @@ const Sidebar = () => {
     <div className="w-64 h-screen bg-purple-800 text-white fixed top-0 left-0 flex flex-col p-6">
       <h2 className="text-2xl font-bold mb-10 text-white">MindWave</h2>
       <nav className="flex flex-col gap-4 text-lg text-center">
-        {/* <Link
+        <Link
           to="/dashboard"
           className="p-2 rounded hover:bg-purple-700 text-white"
         >
@@ -57,7 +57,7 @@ const Sidebar = () => {
           className="mt-6 p-2 rounded hover:bg-red-600 text-white"
         >
           Logout
-        </Link> */}
+        </Link>
       </nav>
     </div>
   );
