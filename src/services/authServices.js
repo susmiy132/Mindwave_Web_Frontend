@@ -31,14 +31,14 @@ export const registerUserService = async (formData) => {
   }
 };
 
-// export const loginUserService = async (formData) => {
-//   try {
-//     const response = await loginUserApi(formData);
-//     return response.data;
-//   } catch (err) {
-//     throw err.response?.data || { message: "Login failed" };
-//   }
-// };
+export const loginUserService = async (formData) => {
+  try {
+    const response = await loginUserApi(formData);
+    return response.data;
+  } catch (err) {
+    throw err.response?.data || { message: "Login failed" };
+  }
+};
 
 // export const fetchUserProfile = async () => {
 //   try {
