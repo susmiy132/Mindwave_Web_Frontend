@@ -40,11 +40,11 @@ export const loginUserService = async (formData) => {
   }
 };
 
-// export const fetchUserProfile = async () => {
-//   try {
-//     const response = await fetchUserApi();
-//     return response.data; // your backend should return user info
-//   } catch (err) {
-//     throw err.response?.data || { message: "Failed to fetch user profile" };
-//   }
-// };
+export const fetchUserProfile = async () => {
+  try {
+    const response = await fetchUserApi();
+    return response.data; // your backend should return user info
+  } catch (err) {
+    throw err.response?.data || { message: "Failed to fetch user profile" };
+  }
+};
