@@ -4,18 +4,18 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getJournalById, updateJournal } from "../../services/journalServices";
 import { toast } from "react-toastify";
 
-// const UpdateJournal = () => {
-//   const { id } = useParams();
-//   const navigate = useNavigate();
-//   const token = localStorage.getItem("token");
+const UpdateJournal = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
-//   const [form, setForm] = useState({
-//     title: "",
-//     content: "",
-//     mood: "",
-//     image: null,
-//   });
-//   const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    title: "",
+    content: "",
+    mood: "",
+    image: null,
+  });
+  const [loading, setLoading] = useState(false);
 
 //   // Load journal on mount
 //   useEffect(() => {
