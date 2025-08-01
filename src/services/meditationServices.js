@@ -136,45 +136,45 @@ export const createMeditation = async (form, token) => {
   return data;
 };
 
-// // Get all meditations (public or token required)
-// export const getAllMeditations = async (token) => {
-//   const headers = token
-//     ? { Authorization: `Bearer ${token}`, Accept: "application/json" }
-//     : { Accept: "application/json" };
+// Get all meditations (public or token required)
+export const getAllMeditations = async (token) => {
+  const headers = token
+    ? { Authorization: `Bearer ${token}`, Accept: "application/json" }
+    : { Accept: "application/json" };
 
-//   const response = await fetch(`${BASE_URL}/meditations`, {
-//     method: "GET",
-//     headers,
-//   });
+  const response = await fetch(`${BASE_URL}/meditations`, {
+    method: "GET",
+    headers,
+  });
 
-//   const data = await response.json();
+  const data = await response.json();
 
-//   if (!response.ok) {
-//     throw new Error(data.message || "Failed to fetch meditations");
-//   }
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to fetch meditations");
+  }
 
-//   return data.data || data.meditations || data;
-// };
+  return data.data || data.meditations || data;
+};
 
-// // Get meditation by ID
-// export const getMeditationById = async (id, token) => {
-//   const headers = token
-//     ? { Authorization: `Bearer ${token}`, Accept: "application/json" }
-//     : { Accept: "application/json" };
+// Get meditation by ID
+export const getMeditationById = async (id, token) => {
+  const headers = token
+    ? { Authorization: `Bearer ${token}`, Accept: "application/json" }
+    : { Accept: "application/json" };
 
-//   const response = await fetch(`${BASE_URL}/meditations/${id}`, {
-//     method: "GET",
-//     headers,
-//   });
+  const response = await fetch(`${BASE_URL}/meditations/${id}`, {
+    method: "GET",
+    headers,
+  });
 
-//   const data = await response.json();
+  const data = await response.json();
 
-//   if (!response.ok) {
-//     throw new Error(data.message || "Failed to fetch meditation");
-//   }
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to fetch meditation");
+  }
 
-//   return data.data || data;
-// };
+  return data.data || data;
+};
 
 // // Update meditation by ID (with optional image)
 // export const updateMeditation = async (id, form, token) => {
