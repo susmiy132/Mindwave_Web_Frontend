@@ -4,70 +4,70 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getJournalById, updateJournal } from "../../services/journalServices";
 import { toast } from "react-toastify";
 
-const UpdateJournal = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+// const UpdateJournal = () => {
+//   const { id } = useParams();
+//   const navigate = useNavigate();
+//   const token = localStorage.getItem("token");
 
-  const [form, setForm] = useState({
-    title: "",
-    content: "",
-    mood: "",
-    image: null,
-  });
-  const [loading, setLoading] = useState(false);
+//   const [form, setForm] = useState({
+//     title: "",
+//     content: "",
+//     mood: "",
+//     image: null,
+//   });
+//   const [loading, setLoading] = useState(false);
 
-  // Load journal on mount
-  useEffect(() => {
-    const fetchJournal = async () => {
-      try {
-        const data = await getJournalById(id, token);
-        setForm({
-          title: data.title || "",
-          content: data.content || "",
-          mood: data.mood || "",
-          image: null,
-        });
-      } catch (error) {
-        toast.error("Failed to fetch journal");
-      }
-    };
-    fetchJournal();
-  }, [id, token]);
+//   // Load journal on mount
+//   useEffect(() => {
+//     const fetchJournal = async () => {
+//       try {
+//         const data = await getJournalById(id, token);
+//         setForm({
+//           title: data.title || "",
+//           content: data.content || "",
+//           mood: data.mood || "",
+//           image: null,
+//         });
+//       } catch (error) {
+//         toast.error("Failed to fetch journal");
+//       }
+//     };
+//     fetchJournal();
+//   }, [id, token]);
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "image") {
-      setForm((prev) => ({ ...prev, image: files[0] }));
-    } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
-    }
-  };
+//   const handleChange = (e) => {
+//     const { name, value, files } = e.target;
+//     if (name === "image") {
+//       setForm((prev) => ({ ...prev, image: files[0] }));
+//     } else {
+//       setForm((prev) => ({ ...prev, [name]: value }));
+//     }
+//   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!token) {
-      toast.error("You must be logged in");
-      return;
-    }
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     if (!token) {
+//       toast.error("You must be logged in");
+//       return;
+//     }
 
-    const formData = new FormData();
-    formData.append("title", form.title);
-    formData.append("content", form.content);
-    formData.append("mood", form.mood);
-    if (form.image) formData.append("image", form.image);
+//     const formData = new FormData();
+//     formData.append("title", form.title);
+//     formData.append("content", form.content);
+//     formData.append("mood", form.mood);
+//     if (form.image) formData.append("image", form.image);
 
-    try {
-      setLoading(true);
-      await updateJournal(id, formData, token);
-      toast.success("Journal updated!");
-      navigate("/save-journal");
-    } catch (err) {
-      toast.error("Update failed");
-    } finally {
-      setLoading(false);
-    }
-  };
+//     try {
+//       setLoading(true);
+//       await updateJournal(id, formData, token);
+//       toast.success("Journal updated!");
+//       navigate("/save-journal");
+//     } catch (err) {
+//       toast.error("Update failed");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
 
   return (
     <div className="bg-white p-6 rounded-xl shadow mb-10">
