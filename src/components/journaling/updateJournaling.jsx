@@ -44,30 +44,30 @@ const UpdateJournal = () => {
     }
   };
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     if (!token) {
-//       toast.error("You must be logged in");
-//       return;
-//     }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!token) {
+      toast.error("You must be logged in");
+      return;
+    }
 
-//     const formData = new FormData();
-//     formData.append("title", form.title);
-//     formData.append("content", form.content);
-//     formData.append("mood", form.mood);
-//     if (form.image) formData.append("image", form.image);
+    const formData = new FormData();
+    formData.append("title", form.title);
+    formData.append("content", form.content);
+    formData.append("mood", form.mood);
+    if (form.image) formData.append("image", form.image);
 
-//     try {
-//       setLoading(true);
-//       await updateJournal(id, formData, token);
-//       toast.success("Journal updated!");
-//       navigate("/save-journal");
-//     } catch (err) {
-//       toast.error("Update failed");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
+    try {
+      setLoading(true);
+      await updateJournal(id, formData, token);
+      toast.success("Journal updated!");
+      navigate("/save-journal");
+    } catch (err) {
+      toast.error("Update failed");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-white p-6 rounded-xl shadow mb-10">
