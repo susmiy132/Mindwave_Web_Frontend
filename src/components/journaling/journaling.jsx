@@ -27,24 +27,24 @@ const Journaling = () => {
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  //   if (!token) {
-  //     toast.error("You must be logged in");
-  //     return;
-  //   }
+    if (!token) {
+      toast.error("You must be logged in");
+      return;
+    }
 
-  //   try {
-  //     await createJournal(form, token);
-  //     toast.success("Journal created successfully!");
-  //     setForm({ title: "", content: "", mood: "", image: null });
-  //     await reload();
-  //     navigate("/save-journal");
-  //   } catch (err) {
-  //     toast.error(err.message || "Failed to create journal");
-  //   }
-  // };
+    try {
+      await createJournal(form, token);
+      toast.success("Journal created successfully!");
+      setForm({ title: "", content: "", mood: "", image: null });
+      await reload();
+      navigate("/save-journal");
+    } catch (err) {
+      toast.error(err.message || "Failed to create journal");
+    }
+  };
 
   return (
     <div className="bg-white p-6 rounded-xl shadow mb-10">
