@@ -11,15 +11,15 @@ const Profile = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-//   const loadProfile = async () => {
-//     try {
-//       const userData = await fetchUserProfile();
-//       setUser(userData);
-//     } catch (err) {
-//       console.error("Profile fetch error:", err);
-//       setError(err.message || "Failed to load profile");
-//     }
-//   };
+  const loadProfile = async () => {
+    try {
+      const userData = await fetchUserProfile();
+      setUser(userData);
+    } catch (err) {
+      console.error("Profile fetch error:", err);
+      setError(err.message || "Failed to load profile");
+    }
+  };
 
   useEffect(() => {
     loadProfile();
