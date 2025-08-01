@@ -70,18 +70,18 @@ export const getJournalById = async (id, token) => {
   return res.json();
 };
 
-// // Update journal
-// export const updateJournal = async (id, formData, token) => {
-//   const res = await fetch(`http://localhost:5050/api/journals/${id}`, {
-//     method: "PUT",
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//     body: formData,
-//   });
-//   if (!res.ok) throw new Error("Failed to update journal");
-//   return res.json();
-// };
+// Update journal
+export const updateJournal = async (id, formData, token) => {
+  const res = await fetch(`http://localhost:5050/api/journals/${id}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
+  if (!res.ok) throw new Error("Failed to update journal");
+  return res.json();
+};
 
 // // for delete 
 // export const deleteJournal = async (id, token) => {
