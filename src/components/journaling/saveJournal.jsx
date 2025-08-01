@@ -5,44 +5,44 @@ import { fetchAllJournals, deleteJournal } from "../../services/journalServices"
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const SaveJournalPage = () => {
-  const [journals, setJournals] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
+// const SaveJournalPage = () => {
+//   const [journals, setJournals] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState("");
+//   const navigate = useNavigate();
 
-  const token = localStorage.getItem("token");
+//   const token = localStorage.getItem("token");
 
-  const loadJournals = async () => {
-    try {
-      const response = await fetchAllJournals(token);
-      if (Array.isArray(response)) {
-        setJournals(response);
-      } else {
-        throw new Error("Invalid data format from server");
-      }
-    } catch (err) {
-      console.error("Failed to fetch journals:", err);
-      setError("Failed to fetch journal entries.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const loadJournals = async () => {
+  //   try {
+  //     const response = await fetchAllJournals(token);
+  //     if (Array.isArray(response)) {
+  //       setJournals(response);
+  //     } else {
+  //       throw new Error("Invalid data format from server");
+  //     }
+  //   } catch (err) {
+  //     console.error("Failed to fetch journals:", err);
+  //     setError("Failed to fetch journal entries.");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    loadJournals();
-  }, [token]);
+  // useEffect(() => {
+  //   loadJournals();
+  // }, [token]);
 
-  const handleDelete = async (id) => {
-    try {
-      await deleteJournal(id, token);
-      toast.success("Journal deleted successfully!");
-      loadJournals(); // Reload list
-    } catch (err) {
-      console.error("Delete failed:", err);
-      toast.error("Failed to delete journal.");
-    }
-  };
+  // const handleDelete = async (id) => {
+  //   try {
+  //     await deleteJournal(id, token);
+  //     toast.success("Journal deleted successfully!");
+  //     loadJournals(); // Reload list
+  //   } catch (err) {
+  //     console.error("Delete failed:", err);
+  //     toast.error("Failed to delete journal.");
+  //   }
+  // };
 
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
@@ -76,12 +76,12 @@ const SaveJournalPage = () => {
               >
                 ✏️ Update
               </button>
-              <button
+              {/* <button
                 onClick={() => handleDelete(entry._id)}
                 className="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
               >
                 🗑️ Delete
-              </button>
+              </button> */}
             </div>
           </div>
         ))
