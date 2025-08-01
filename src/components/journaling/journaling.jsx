@@ -89,7 +89,7 @@ const Journaling = () => {
         </button>
       </form>
       
-      {/* <div className="mt-6">
+      <div className="mt-6">
         <button
           className="text-sm bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded"
           onClick={() => navigate("/save-journal")}  // or a general page showing saved journals
@@ -97,7 +97,7 @@ const Journaling = () => {
   ✏️    Your Journals
         </button>
 
-      </div> */}
+      </div>
 
 
     </div>
