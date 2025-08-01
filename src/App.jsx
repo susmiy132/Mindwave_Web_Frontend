@@ -12,7 +12,7 @@ import LoginPage from "./pages/login";
 // import RegisterPage from "./pages/RegisterPage";
 import MoodTracker from "./components/moodTracker/moodTracker";
 import ProgressBar from "./components/progress/progressBar";
-import Settings from "./components/settings/Settings";
+import Settings from "./components/settings/settings";
 import RegisterForm from "./components/registrationForm";
 import Profile from "./pages/profile";
 
