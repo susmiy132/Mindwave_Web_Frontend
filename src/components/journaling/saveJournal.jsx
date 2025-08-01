@@ -33,16 +33,16 @@ const SaveJournalPage = () => {
     loadJournals();
   }, [token]);
 
-  // const handleDelete = async (id) => {
-  //   try {
-  //     await deleteJournal(id, token);
-  //     toast.success("Journal deleted successfully!");
-  //     loadJournals(); // Reload list
-  //   } catch (err) {
-  //     console.error("Delete failed:", err);
-  //     toast.error("Failed to delete journal.");
-  //   }
-  // };
+  const handleDelete = async (id) => {
+    try {
+      await deleteJournal(id, token);
+      toast.success("Journal deleted successfully!");
+      loadJournals(); // Reload list
+    } catch (err) {
+      console.error("Delete failed:", err);
+      toast.error("Failed to delete journal.");
+    }
+  };
 
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-center text-red-500">{error}</p>;
